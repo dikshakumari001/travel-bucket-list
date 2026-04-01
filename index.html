@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Traveler's Bucket List</title>
+    <style>
+        /* CSS - Making it look modern without separate files */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            height: 100vh;
+            background-color: #eef2f3;
+        }
+
+        /* The Menu (Sidebar) */
+        .menu-sidebar {
+            width: 260px;
+            background-color: #2c3e50;
+            color: white;
+            padding: 25px;
+            box-shadow: 4px 0 10px rgba(0,0,0,0.1);
+        }
+
+        .menu-sidebar h2 {
+            color: #1abc9c;
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+
+        .menu-sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .menu-sidebar ul li {
+            margin-bottom: 15px;
+        }
+
+        .menu-sidebar ul li a {
+            color: #bdc3c7;
+            text-decoration: none;
+            font-size: 18px;
+            display: block;
+            padding: 12px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .menu-sidebar ul li a:hover {
+            background-color: #34495e;
+            color: #1abc9c;
+            padding-left: 20px;
+        }
+
+        /* Content Area */
+        .content-area {
+            flex: 1;
+            padding: 40px;
+            overflow-y: auto;
+        }
+
+        .section-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+        }
+
+        h1 { color: #2c3e50; margin-top: 0; }
+        h3 { color: #16a085; border-left: 4px solid #1abc9c; padding-left: 15px; }
+
+        /* List Styles */
+        .travel-list { line-height: 1.8; font-size: 17px; }
+
+        /* Registration Form Styles */
+        .registration-box {
+            max-width: 500px;
+        }
+
+        label { display: block; margin: 15px 0 5px; font-weight: 600; }
+
+        input[type="text"], input[type="email"], select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #dcdde1;
+            border-radius: 6px;
+            box-sizing: border-box; /* Ensures padding doesn't break width */
+        }
+
+        .submit-button {
+            margin-top: 25px;
+            background-color: #1abc9c;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            font-weight: bold;
+        }
+
+        .submit-button:hover { background-color: #16a085; }
+
+        /* Frame Style */
+        .map-frame {
+            width: 100%;
+            height: 350px;
+            border: none;
+            border-radius: 12px;
+            margin-top: 20px;
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="menu-sidebar">
+        <h2>🌍 Travel Portal</h2>
+        <ul>
+            <li><a href="#welcome">Home</a></li>
+            <li><a href="#list-section">My Bucket List</a></li>
+            <li><a href="#form-section">Join the Club</a></li>
+        </ul>
+    </nav>
+
+    <div class="content-area">
+
+        <div id="welcome" class="section-card">
+            <h1>Ready for your next adventure?</h1>
+            <p>Welcome to my personal travel hub. This page is built using pure HTML and CSS to showcase travel destinations, organized lists, and a functional registration portal.</p>
+        </div>
+
+        <div id="list-section" class="section-card">
+            <h3>Top Ranked Destinations (Ordered List)</h3>
+            <ol class="travel-list">
+                <li><strong>Switzerland:</strong> Exploring the heart of the Alps.</li>
+                <li><strong>Japan:</strong> Experiencing the blend of neon cities and Zen temples.</li>
+                <li><strong>Iceland:</strong> Chasing the Northern Lights and volcanic hot springs.</li>
+            </ol>
+
+            <h3>Essential Packing Items (Unordered List)</h3>
+            <ul class="travel-list">
+                <li>Universal Power Adapter</li>
+                <li>Noise-Canceling Headphones</li>
+                <li>Portable Power Bank</li>
+                <li>Personal First-Aid Kit</li>
+            </ul>
+
+            <h3>Destination Preview (Using Frame)</h3>
+            <p>Check out the location for our next group trip:</p>
+            <iframe class="map-frame" src="http://googleusercontent.com/maps.google.com/4"></iframe>
+        </div>
+
+        <div id="form-section" class="section-card">
+            <h3>Traveler Registration</h3>
+            <p>Sign up to receive our monthly travel itinerary and secret flight deals.</p>
+            
+            <form class="registration-box">
+                <label>Full Name</label>
+                <input type="text" name="username" placeholder="Enter your full name" required>
+
+                <label>Email Address</label>
+                <input type="email" name="useremail" placeholder="email@example.com" required>
+
+                <label>Preferred Destination</label>
+                <select name="location">
+                    <option value="mountains">Mountains & Trekking</option>
+                    <option value="beaches">Tropical Beaches</option>
+                    <option value="cities">Urban Exploration</option>
+                    <option value="safari">Wild Safari</option>
+                </select>
+
+                <label>Traveler Type</label>
+                <input type="radio" name="type" value="solo"> Solo Explorer 
+                <input type="radio" name="type" value="group"> Group Traveler
+
+                <label>Interests</label>
+                <input type="checkbox" name="interest" value="photo"> Photography
+                <input type="checkbox" name="interest" value="food"> Local Cuisine
+
+                <button type="submit" class="submit-button">Register for Updates</button>
+            </form>
+        </div>
+
+    </div>
+
+</body>
+</html>
